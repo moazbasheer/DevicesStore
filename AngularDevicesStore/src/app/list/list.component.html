@@ -1,0 +1,28 @@
+<div class="card" style="width:50%">
+    <div class="card-header">
+        <a class="btn btn-primary" [routerLink]="['/add']">Add Device</a>
+        <a class="btn btn-primary mx-3" (click)="logout()">Logout</a>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>options</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let i of list">
+                    <td>{{i.name}}</td>
+                    <td>{{i.price}}</td>
+                    <td>
+                        <a class="btn btn-primary" [routerLink]="['/update', i.id]" >Update</a>
+                        <a class="btn btn-danger" (click)="onDelete(i.id)">Delete</a>
+                    </td>
+                </tr>
+                <td></td>
+            </tbody>
+        </table>
+    </div>
+</div>

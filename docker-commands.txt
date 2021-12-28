@@ -1,12 +1,12 @@
 commands:-
-- sudo docker run -dp 3309:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+- sudo docker run -dp --name=mysql1 3309:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
 - cd to WebAPI folder
 - sudo docker build -t backend-image ./
 - sudo docker run --name=back -dp 8000:8000 backend-image
 - sudo docker exec -it back php artisan migrate
 - cd to Angular folder
 - sudo docker build -t frontend-image ./
-- sudo docker run -dp 4200:4200 frontend-image
+- sudo docker run --name=front -dp 4200:4200 frontend-image
 
 use http://localhost:4200 to open the front end application.
 use http://localhost:8000 to open the back end application.

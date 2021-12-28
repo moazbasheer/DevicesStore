@@ -1,5 +1,5 @@
 commands:-
-- sudo docker run -dp --name=mysql1 3309:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
+- sudo docker run --name=mysql1 -dp 3309:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
 - cd to WebAPI folder
 - sudo docker build -t backend-image ./
 - sudo docker run --name=back --link mysql1:mysql -dp 8000:8000 backend-image

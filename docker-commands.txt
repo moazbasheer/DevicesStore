@@ -1,7 +1,8 @@
 commands:-
 - sudo docker run --name=mysql1 -dp 3309:3306 -e MYSQL_ROOT_HOST=% -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql
 - sudo docker exec -it mysql1 mysql -uroot -p
-- mysql> create databse devices;
+- password: <just press enter>
+- mysql> create database devices;
 - mysql> exit;
 - cd to WebAPI folder
 - sudo docker build -t backend-image ./

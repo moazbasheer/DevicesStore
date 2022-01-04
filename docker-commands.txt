@@ -7,7 +7,7 @@ commands:-
 - cd to WebAPI folder
 - sudo docker build -t backend-image ./
 - sudo docker run --name=back --link mysql1:mysql -dp 8000:8000 backend-image
-- sudo docker exec -it back php artisan migrate
+- sudo docker exec -it back php artisan migrate --seed
 - cd to Angular folder
 - sudo docker build -t frontend-image ./
 - sudo docker run --name=front -dp 4200:4200 frontend-image
